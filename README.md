@@ -49,6 +49,9 @@ I also do not fancy cabal files, they take fun away (v2 style). Thus, here's REA
 How to run
 ----------
 
+Expects HIGGS.csv from the dataset in current directory.
+
+
 ```$ ghc -o a-hs --make -odir objs -hidir objs -O3 a.hs && time ./a-hs                        
 [1 of 1] Compiling Main             ( a.hs, objs/Main.o )
 
