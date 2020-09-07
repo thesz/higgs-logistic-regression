@@ -45,6 +45,49 @@ I spent a good two thirds of experimentation time fighting with HMatrix and lazi
 
 I also do not fancy cabal files, they take fun away (v2 style). Thus, here's README and just one source file which I like better.
 
+
+How to run
+----------
+
+```$ ghc -o a-hs --make -odir objs -hidir objs -O3 a.hs && time ./a-hs                        
+[1 of 1] Compiling Main             ( a.hs, objs/Main.o )
+
+a.hs:31:1: warning: [-Wtabs]
+    Tab character found here, and in 226 further locations.
+    Please use spaces instead.
+   |
+31 |         | otherwise = loop (b - (a LA.#> b)) b
+   | ^^^^^^^^
+Linking a-hs ...
+read 0
+read 100000
+read 200000 
+......
+read 10800000                                                                                                                          
+read 10900000
+read whole 11000000
+evaluated: 5566682 from 10500000, ratio 0.5301601904761905, loss 1.0437739473273728
+evaluated: 5754537 from 10500000, ratio 0.5480511428571428, loss 0.9885380144308733
+evaluated: 6154574 from 10500000, ratio 0.5861499047619048, loss 0.9556088675063659
+evaluated: 6457140 from 10500000, ratio 0.6149657142857143, loss 0.9356814631349517
+evaluated: 6644622 from 10500000, ratio 0.6328211428571429, loss 0.9232578403532684
+evaluated: 6753128 from 10500000, ratio 0.6431550476190476, loss 0.9152138811679993
+evaluated: 6818100 from 10500000, ratio 0.6493428571428571, loss 0.9098081830748959
+evaluated: 6860362 from 10500000, ratio 0.6533678095238096, loss 0.9060838279450868
+evaluated: 6890397 from 10500000, ratio 0.6562282857142857, loss 0.9035132682204905
+evaluated: 6912001 from 10500000, ratio 0.6582858095238096, loss 0.9017867699793111
+evaluated: 6928849 from 10500000, ratio 0.659890380952381, loss 0.9007185683625898
+evaluated: 6943233 from 10500000, ratio 0.6612602857142857, loss 0.9001845304041879
+evaluated: 6955524 from 10500000, ratio 0.6624308571428571, loss 0.9000847157095576
+evaluated: 6966177 from 10500000, ratio 0.6634454285714285, loss 0.9003347933989551
+evaluated: 331634 from 500000, ratio 0.663268, loss 0.9009315807859143
+                                 
+real    58m48.767s
+user    58m25.705s
+sys     0m22.231s
+sz@Ubuntu-2004-focal-64-minimal:~/play/1/gln$
+```
+
 Final thoughts
 --------------
 
